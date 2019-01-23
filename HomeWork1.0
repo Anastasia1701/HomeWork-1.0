@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DevEducation1._0
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Программа найдёт дискриминант и корени уравнения:\nax^2+b+x=0, введите первое число(а) ");
+            double number1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите второе число ");
+            double number2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите третие число ");
+            double number3 = Convert.ToDouble(Console.ReadLine());
+            double discriminant = number2 * number2 -4* number1 * number3;
+            {
+                if (discriminant == 0)
+                {
+                    double result0 = -number2 / 2 * number1;
+                    Console.WriteLine("Дискриминант=0,\nкорень уравнения=" + result0);
+                }
+                if (discriminant > 0) 
+                {
+                    double i = Convert.ToInt32(Math.Sqrt(discriminant));
+                    double result1 = (-number2 + i) / 2 * number1;
+                    double result2 = (-number2 - i) / 2 * number1;
+                    Console.WriteLine("Дискриминант=" + discriminant + " первый корень уравнения=" + result1 + "\nвтрой корень уравнения=" + result2);
+                }
+                if (discriminant < 0) 
+                {
+                    Console.WriteLine("Дискриминант<0,следовательно корней не существует.\nНО мой учитель ,Александр Кобельчак,сказал,что корень можно вычеслить ,даже если дискримант отрицательный./nК сожалению я не нашла формулы в интернете ,но обязательно спрошу при встрече и перепишу эту программу))) ");
+                }
+                Console.ReadKey();
+            }
+                    
+
+
+        }
+    }
+}
